@@ -1,5 +1,3 @@
 /* Experience section styles */
-:host {
-  color: black !important;
-}
+/* Removed forced black text color for better contrast */
 

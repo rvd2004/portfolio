@@ -8,8 +8,8 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, rgba(217, 119, 6, 0.15) 0%, rgba(236, 72, 153, 0.15) 50%, rgba(34, 197, 94, 0.15) 100%),
-              url('assets/images/briefcase.png') center/cover no-repeat fixed;
+  background: linear-gradient(135deg, #fdf6e3 0%, #e0f7fa 100%);
+  color: #22223b;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
