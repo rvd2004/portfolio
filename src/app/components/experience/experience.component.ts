@@ -19,28 +19,15 @@ interface Experience {
 export class ExperienceComponent {
   experiences: Experience[] = [
     {
-      position: 'Senior Software Engineer',
-      company: 'Deloitte',
-      duration: 'Jan 2022 - Present',
+      position: 'Analyst',
+      company: '',
+      duration: 'Sep 2025 - Present',
       description: [
-        'Led development of enterprise Java applications serving 1000+ users',
-        'Designed and implemented RESTful APIs using Spring Boot framework',
-        'Collaborated with cross-functional teams to deliver scalable solutions',
-        'Mentored junior developers and conducted code reviews'
+        'Trained in Angular, Spring Boot, AWS, Python, Java, and Microservices.',
+        'Resolved production bugs and worked on JDK 17 upgrade tasks.',
+        'Written JUnit tests with 90%+ coverage.'
       ],
-      technologies: ['Java', 'Spring Boot', 'Angular', 'SQL', 'REST APIs']
-    },
-    {
-      position: 'Software Engineer',
-      company: 'Deloitte',
-      duration: 'Jun 2020 - Dec 2021',
-      description: [
-        'Developed and maintained microservices architecture',
-        'Implemented responsive UI using Angular and Tailwind CSS',
-        'Optimized database queries reducing load time by 40%',
-        'Participated in agile development and sprint planning'
-      ],
-      technologies: ['Java', 'Angular', 'MySQL', 'Git', 'Agile']
+      technologies: ['Angular', 'Spring Boot', 'AWS', 'Python', 'Java', 'Microservices', 'JUnit', 'JDK 17']
     }
   ];
 }
