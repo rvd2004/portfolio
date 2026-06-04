@@ -1,33 +1,33 @@
-<section id="experience" class="py-20 px-4 bg-green-900/20 backdrop-blur">
+<section id="experience" class="py-20 px-4 bg-white dark:bg-slate-900">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">
-      <span class="bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-black">Work Experience</span>
+      <span class="bg-gradient-to-r from-yellow-500 to-pink-500 bg-clip-text text-transparent">Work Experience</span>
     </h2>
 
     <div class="space-y-8">
-      <div *ngFor="let exp of experiences" class="relative pl-6 sm:pl-32 py-6 border-l-2 border-yellow-300">
+      <div *ngFor="let exp of experiences" class="relative pl-6 sm:pl-32 py-6 border-l-2 border-yellow-400 dark:border-yellow-500">
         <!-- Timeline Dot -->
-        <div class="absolute left-0 top-6 w-4 h-4 bg-yellow-300 rounded-full transform -translate-x-2.5 border-4 border-slate-900"></div>
+        <div class="absolute left-0 top-6 w-4 h-4 bg-yellow-400 dark:bg-yellow-500 rounded-full transform -translate-x-2.5 border-4 border-white dark:border-slate-900"></div>
 
         <!-- Content -->
-        <div class="bg-green-900/30 p-6 rounded-lg border border-slate-600 hover:border-yellow-300 transition">
+        <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-yellow-400 dark:hover:border-yellow-500 transition">
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
-            <h3 class="text-xl font-bold text-black">{{ exp.position }}</h3>
-            <span class="text-black text-sm mt-2 sm:mt-0">{{ exp.duration }}</span>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ exp.position }}</h3>
+            <span class="text-slate-600 dark:text-slate-400 text-sm mt-2 sm:mt-0">{{ exp.duration }}</span>
           </div>
 
-          <p class="text-black font-semibold mb-4">{{ exp.company }}</p>
+          <p class="text-slate-700 dark:text-slate-300 font-semibold mb-4">{{ exp.company }}</p>
 
-          <ul class="space-y-2 mb-4 text-black">
+          <ul class="space-y-2 mb-4 text-slate-700 dark:text-slate-300">
             <li *ngFor="let desc of exp.description" class="flex items-start">
-              <span class="text-black mr-3 mt-1">▸</span>
+              <span class="text-yellow-500 dark:text-yellow-400 mr-3 mt-1">▸</span>
               <span>{{ desc }}</span>
             </li>
           </ul>
 
           <div class="flex flex-wrap gap-2">
             <span *ngFor="let tech of exp.technologies"
-                  class="px-3 py-1 bg-yellow-300/10 border border-yellow-300/50 text-black text-xs rounded-full">
+                  class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/20 border border-yellow-400 dark:border-yellow-700 text-yellow-700 dark:text-yellow-300 text-xs rounded-full">
               {{ tech }}
             </span>
           </div>

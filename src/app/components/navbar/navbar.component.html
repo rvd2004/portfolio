@@ -1,40 +1,50 @@
-<nav class="fixed top-0 w-full bg-yellow-900/30 backdrop-blur-md z-50 border-b border-slate-700">
+<nav class="fixed top-0 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-md z-50 border-b border-slate-200 dark:border-slate-700">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <button (click)="scrollToSection('hero')" class="text-xl font-bold bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-black hover:opacity-80 transition">
+        <button (click)="scrollToSection('hero')" class="text-xl font-bold bg-gradient-to-r from-yellow-400 to-pink-400 bg-clip-text text-transparent hover:opacity-80 transition">
           Portfolio
         </button>
       </div>
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex space-x-8">
-        <button (click)="scrollToSection('hero')" class="text-black hover:text-black transition">Home</button>
-        <button (click)="scrollToSection('about')" class="text-black hover:text-black transition">About</button>
-        <button (click)="scrollToSection('skills')" class="text-black hover:text-black transition">Skills</button>
-        <button (click)="scrollToSection('experience')" class="text-black hover:text-black transition">Experience</button>
-        <button (click)="scrollToSection('projects')" class="text-black hover:text-black transition">Projects</button>
-        <button (click)="scrollToSection('contact')" class="text-black hover:text-black transition">Contact</button>
+        <button (click)="scrollToSection('hero')" class="text-slate-700 dark:text-slate-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition">Home</button>
+        <button (click)="scrollToSection('about')" class="text-slate-700 dark:text-slate-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition">About</button>
+        <button (click)="scrollToSection('skills')" class="text-slate-700 dark:text-slate-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition">Skills</button>
+        <button (click)="scrollToSection('experience')" class="text-slate-700 dark:text-slate-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition">Experience</button>
+        <button (click)="scrollToSection('projects')" class="text-slate-700 dark:text-slate-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition">Projects</button>
+        <button (click)="scrollToSection('contact')" class="text-slate-700 dark:text-slate-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition">Contact</button>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button (click)="toggleMenu()" class="md:hidden p-2 text-gray-700">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path *ngIf="!isOpen()" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          <path *ngIf="isOpen()" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
+      <!-- Theme Toggle + Mobile Menu Button -->
+      <div class="flex items-center gap-4">
+        <button (click)="themeService.toggleTheme()" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition" [attr.aria-label]="themeService.isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'">
+          <svg *ngIf="!themeService.isDarkMode()" class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+          <svg *ngIf="themeService.isDarkMode()" class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.536l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.121-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.464 7.464a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707zm-2.121-2.121a1 1 0 000 1.414l.707.707A1 1 0 004.464 4.05l-.707-.707a1 1 0 00-1.414 0zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <button (click)="toggleMenu()" class="md:hidden p-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path *ngIf="!isOpen()" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path *ngIf="isOpen()" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div *ngIf="isOpen()" class="md:hidden pb-4 border-t border-slate-700 animate-slide-down">
-      <button (click)="scrollToSection('hero')" class="block w-full text-left px-0 py-2 text-black hover:text-black transition">Home</button>
-      <button (click)="scrollToSection('about')" class="block w-full text-left px-0 py-2 text-black hover:text-black transition">About</button>
-      <button (click)="scrollToSection('skills')" class="block w-full text-left px-0 py-2 text-black hover:text-black transition">Skills</button>
-      <button (click)="scrollToSection('experience')" class="block w-full text-left px-0 py-2 text-black hover:text-black transition">Experience</button>
-      <button (click)="scrollToSection('projects')" class="block w-full text-left px-0 py-2 text-black hover:text-black transition">Projects</button>
-      <button (click)="scrollToSection('contact')" class="block w-full text-left px-0 py-2 text-black hover:text-black transition">Contact</button>
+    <div *ngIf="isOpen()" class="md:hidden pb-4 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 animate-slide-down">
+      <button (click)="scrollToSection('hero')" class="block w-full text-left px-0 py-2 text-slate-700 dark:text-slate-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition">Home</button>
+      <button (click)="scrollToSection('about')" class="block w-full text-left px-0 py-2 text-slate-700 dark:text-slate-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition">About</button>
+      <button (click)="scrollToSection('skills')" class="block w-full text-left px-0 py-2 text-slate-700 dark:text-slate-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition">Skills</button>
+      <button (click)="scrollToSection('experience')" class="block w-full text-left px-0 py-2 text-slate-700 dark:text-slate-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition">Experience</button>
+      <button (click)="scrollToSection('projects')" class="block w-full text-left px-0 py-2 text-slate-700 dark:text-slate-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition">Projects</button>
+      <button (click)="scrollToSection('contact')" class="block w-full text-left px-0 py-2 text-slate-700 dark:text-slate-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition">Contact</button>
     </div>
   </div>
 </nav>

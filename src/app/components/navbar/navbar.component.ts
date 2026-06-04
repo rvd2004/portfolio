@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
   isOpen = signal(false);
+  themeService = inject(ThemeService);
 
   toggleMenu() {
     this.isOpen.update(val => !val);
