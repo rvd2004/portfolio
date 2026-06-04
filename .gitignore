@@ -44,3 +44,6 @@ Thumbs.db
 # Environment files
 .env
 .env.local
+
+# Temporary directories
+tmpclaude-*-cwd
