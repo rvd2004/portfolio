@@ -1,4 +1,4 @@
-# Software Engineer Portfolio - Angular 17
+# Software Engineer Portfolio 
 
 A modern, responsive portfolio website built with Angular 17, Tailwind CSS, and TypeScript. Features a clean dark theme with smooth animations and comprehensive sections showcasing professional experience, skills, and projects.
 
